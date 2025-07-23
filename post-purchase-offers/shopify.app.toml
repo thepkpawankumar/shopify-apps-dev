@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "46033d79fed020a5f5a158634541af7a"
+name = "post-purchase-offers"
+handle = "post-purchase-offers-6"
+application_url = "https://trailer-superb-committees-repository.trycloudflare.com"
+embedded = true
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = ["https://trailer-superb-committees-repository.trycloudflare.com/auth/callback", "https://trailer-superb-committees-repository.trycloudflare.com/auth/shopify/callback", "https://trailer-superb-committees-repository.trycloudflare.com/api/auth/callback"]
+
+[pos]
+embedded = false
