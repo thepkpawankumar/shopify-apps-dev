@@ -3,7 +3,7 @@
 client_id = "25fcded3cbdfee6e44a79ab0b1c299a1"
 name = "checkout-update"
 handle = "checkout-update-5"
-application_url = "https://applying-season-figured-integrate.trycloudflare.com"
+application_url = "https://contributions-labor-primary-statistical.trycloudflare.com"
 embedded = true
 
 [build]
@@ -18,7 +18,7 @@ api_version = "2025-07"
 scopes = "write_products"
 
 [auth]
-redirect_urls = ["https://applying-season-figured-integrate.trycloudflare.com/auth/callback", "https://applying-season-figured-integrate.trycloudflare.com/auth/shopify/callback", "https://applying-season-figured-integrate.trycloudflare.com/api/auth/callback"]
+redirect_urls = ["https://contributions-labor-primary-statistical.trycloudflare.com/auth/callback", "https://contributions-labor-primary-statistical.trycloudflare.com/auth/shopify/callback", "https://contributions-labor-primary-statistical.trycloudflare.com/api/auth/callback"]
 
 [pos]
 embedded = false
