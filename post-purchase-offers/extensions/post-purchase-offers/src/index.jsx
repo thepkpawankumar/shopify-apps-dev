@@ -17,7 +17,7 @@ import {
 } from "@shopify/post-purchase-ui-extensions-react";
 
 // For local development, replace APP_URL with your local tunnel URL.
-const APP_URL = "https://trailer-superb-committees-repository.trycloudflare.com";
+const APP_URL = "https://tee-fe-salt-strings.trycloudflare.com";
 
 // Preload data from your app server to ensure that the extension loads quickly.
 extend(
@@ -51,7 +51,10 @@ export function App() {
 
   const { offers } = storage.initialData;
 
-  const purchaseOption = offers[0];
+  const [currentOfferIndex, setCurrentOfferIndex] = useState(0);
+  console.log("currentOfferIndex", currentOfferIndex);
+  const purchaseOption = offers[currentOfferIndex];
+  console.log("purchaseOption", purchaseOption);
 
   // Define the changes that you want to make to the purchase, including the discount to the product.
   useEffect(() => {
@@ -109,8 +112,17 @@ export function App() {
 
   function declineOffer() {
     setLoading(true);
-    // Redirect to the thank-you page
-    done();
+
+    if (currentOfferIndex < offers.length - 1) {
+      setCurrentOfferIndex(currentOfferIndex + 1);
+      console.log(
+        `Offer declined. Moving to next offer: ${currentOfferIndex + 1}`
+      );
+    } else {
+      // No more offers, go to the thank you page
+      console.log("No more offers. Redirecting to the thank you page.");
+      done();
+    }
   }
 
   return (
